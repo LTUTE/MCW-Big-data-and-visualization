@@ -166,7 +166,7 @@ In this exercise, you will implement a classification experiment. You will load 
 
 Duration: 20 minutes
 
-In this exercise, you will create a baseline environment for Azure Data Factory development for further operationalization of data movement and processing. You will create a Data Factory service, and then install the Data Management Gateway which is the agent that facilitates data movement from on-premises to Microsoft Azure.
+In this exercise, you will create a baseline environment for Azure Data Factory development for further operationalization of data movement and processing. You will create a Data Factory service, and then install the Azure Integration Runtime (formerly known as Data Management Gateway) which is the agent that facilitates data movement from on-premises to Microsoft Azure.
 
 ### Task 1: Download and stage data to be processed
 
