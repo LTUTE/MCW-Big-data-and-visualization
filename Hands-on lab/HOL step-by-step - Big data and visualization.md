@@ -552,9 +552,9 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![Select the parts to create the Power BI connection string](media/databricks-power-bi-spark-address-construct.png 'Construct Power BI connection string')
 
-        - In our example, the server address would be:
+       - In our example, the server address would be:
 
-    <https://centralus.azuredatabricks.net:443/sql/protocolv1/o/5198753201250002/0303-195148-away263> or <https://centralus.azuredatabricks.net:443/sql/protocolv1/o/5198753201250002/lab> (if you choose the aliased version)
+    <https://eastlus.azuredatabricks.net:443/sql/protocolv1/o/5198753201250002/0303-195148-away263> or <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/5198753201250002/lab> (if you choose the aliased version)
 
 ### Task 2: Connect to Azure Databricks using Power BI Desktop
 
@@ -589,7 +589,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     - Password: Remember that ADF Access token we generated and asked you to paste in Notepad, that is the password.
 
-     ![Copy the generated token](media/databricks-copy-token.png 'Copy generated token')
+    ![Copy the generated token](media/databricks-copy-token.png 'Copy generated token')
 
     ![Enter "token" for the user name and paste user token into the password field](media/pbi-desktop-login.png 'Enter credentials')
 
