@@ -481,23 +481,19 @@ In this exercise, you will extend the Data Factory to operationalize the scoring
 
     ![Paste the generated access token](media/adf-ml-access-token.png 'Paste access token')
 
-12. Leave the form open and switch back to Azure Databricks. Select **Clusters** on the menu, then select your cluster in the list. Select the **Tags** tab and copy the **ClusterId** value.
-
-    ![Screenshot of the cluster tags tab](media/databricks-cluster-id.png 'Copy the ClusterId value')
-
-13. Switch back to your Azure Data Factory screen and paste the ClusterId value into the **Existing cluster id** field. Select **Finish**.
+12. In Azure Data Factory screen and select your cluster name in the **Choose from existing clusters** field. Select **Finish**.
 
     ![Paste the cluster id and select finish](media/adf-ml-databricks-clusterid.png 'Paste cluster id')
 
-14. Switch back to Azure Databricks. Select **Workspace** in the menu. Open notebook **04 Deploy for Batch Scoring**. Examine the content but don't run any of the cells yet.
+13. Switch back to Azure Databricks. Select **Workspace** in the menu. Open notebook **04 Deploy for Batch Scoring**. Examine the content but don't run any of the cells yet.
 
     ![Right-click within workspace and select 04 Deploy for Batch Score](media/databricks-workspace-create-folder.png 'Create folder')
 
-15. Switch back to your Azure Data Factory screen. Browse to your  **04 Deploy for Batch Score** into the Notebook path field.
+14. Switch back to your Azure Data Factory screen. Browse to your  **04 Deploy for Batch Score** into the Notebook path field.
 
     ![browse to 04 Deploy for Batch score into the notebook path](media/adf-ml-notebook-path.png 'Notebook path')
 
-19. The final step is to connect the Copy activities with the Notebook activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All** after making the connection.
+15. The final step is to connect the Copy activities with the Notebook activity. Select the small green box on the side of the copy activity, and drag the arrow onto the Notebook activity on the design surface. What this means is that the copy activity has to complete processing and generate its files in your storage account before the Notebook activity runs, ensuring the files required by the BatchScore notebook are in place at the time of execution. Select **Publish All** after making the connection.
 
     ![Attach the copy activity to the notebook and then publish](media/adf-ml-connect-copy-to-notebook.png 'Attach the copy activity to the notebook')
 
@@ -540,25 +536,25 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
 1. In Azure Databricks, go to Clusters and select your cluster.
 
-2. On the cluster edit page, scroll down and select the JDBC/ODBC tab.
+2. On the cluster Configuration page, scroll down to **Advanced options** and select the JDBC/ODBC tab.
 
     ![Select the JDBC/ODBC tab](media/databricks-power-bi-jdbc.png 'JDBC strings')
 
 3. On the JDBC/ODBC tab, copy and save the JDBC URL.
 
-    - Construct the JDBC server address that you will use when you set up your Spark cluster connection in Power BI Desktop.
+4. Construct the JDBC server address that you will use when you set up your Spark cluster connection in Power BI Desktop.
 
     - Take the JDBC URL that you copied and saved in step 3 and do the following:
 
-    - Replace jdbc:hive2 with https.
+        - Replace jdbc:spark with https.
 
-    - Remove everything in the path between the port number and sql, retaining the components indicated by the boxes in the image below.
+        - Remove everything in the path between the port number and sql, and data after sql ';AuthMech=3;UID=token;PWD=<personal-access-token>' retaining the components indicated by the boxes in the image below.
 
     ![Select the parts to create the Power BI connection string](media/databricks-power-bi-spark-address-construct.png 'Construct Power BI connection string')
 
-    - In our example, the server address would be:
+        - In our example, the server address would be:
 
-    <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/0614-124738-doubt405> or <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/1707858429329790/lab> (if you choose the aliased version)
+    <https://centralus.azuredatabricks.net:443/sql/protocolv1/o/5198753201250002/0303-195148-away263> or <https://centralus.azuredatabricks.net:443/sql/protocolv1/o/5198753201250002/lab> (if you choose the aliased version)
 
 ### Task 2: Connect to Azure Databricks using Power BI Desktop
 
