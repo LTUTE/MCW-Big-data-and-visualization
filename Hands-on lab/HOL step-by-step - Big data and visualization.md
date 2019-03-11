@@ -552,7 +552,7 @@ Before you begin, you must first obtain the JDBC connection string to your Azure
 
     ![Select the parts to create the Power BI connection string](media/databricks-power-bi-spark-address-construct.png 'Construct Power BI connection string')
 
-       - In our example, the server address would be:
+    - In our example, the server address would be:
 
     <https://eastlus.azuredatabricks.net:443/sql/protocolv1/o/5198753201250002/0303-195148-away263> or <https://eastus.azuredatabricks.net:443/sql/protocolv1/o/5198753201250002/lab> (if you choose the aliased version)
 
